@@ -1,0 +1,17 @@
+{% extends 'template.html' %}
+{% block content %}
+Enter the form to submit your query
+<p>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {% for field_names in form %}
+        <div>
+        {{field_names.label}}
+        {{field_names}}
+        </div>
+        {% endfor %}
+
+</p>
+<p>From here, you can go back to :</p>
+<p>The <a href= '{{url_for('home')}}'><b>Home</b> </a> page</p>
+{% endblock %}
