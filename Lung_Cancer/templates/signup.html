@@ -1,0 +1,44 @@
+{% extends "template.html" %}
+{% block content %}
+<p>Time to fill up the form</p>
+<p>And get the results....</p>
+
+<!-- <form action="" method="post">
+    {{form.hidden_tag()}}
+    <div>
+        {{form.Username.label}}
+        {{form.Username}}
+    </div>
+    <div>
+        {{form.Age.label}}
+        {{form.Age}}
+    </div>
+    <div>
+        {{form.Gender.label}}
+        {{form.Gender}}
+    </div>
+    <div>
+        {{form.submit()}}
+    </div>
+
+</form> -->
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    
+    {% for field in form %}
+            <div>
+                {{ field.label }}
+                {{ field }}
+            </div>
+    {% endfor %}
+<h2>
+    {% with messages = get_flashed_messages()%}
+    {% if messages %}
+    {% for x in messages %}
+    <div>{{x}}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</h2>
+
+{% endblock %}

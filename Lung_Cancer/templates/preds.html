@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% block content %}
+<h2> The results are here </h2>
+<h2>
+    {% with messages= get_flashed_messages() %}
+    {% if messages %}
+    {% for text in messages %}
+    <div>{{text}}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</h2>
+{% endblock %}
